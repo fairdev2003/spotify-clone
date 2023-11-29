@@ -66,3 +66,6 @@
   grid-area: player;
 }
 
+#back {
+  background: linear-gradient(0deg, #181717 50%, rgb(228, 24, 24) 100%);
+}
