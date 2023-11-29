@@ -5,29 +5,27 @@ import { create } from 'zustand'
 type Store = {
 }
 
-type Library = {
-    selected_playlist: number;
-    main_section: string,
-    set_main_theme() : void
+type LibraryFunctions = {
+    
+    set_menu: (menu: string) => void
+    set_playlist: (index: number) => void
+}
+
+type LibraryData = {
+    selected_playlist: number
+    menu: string
 }
 
 // functions
 
-export const useSchools = create<Store>((set) => ({
-    school_error: false,
-    error_message: '',
-    loading_schools: false,
-    fetch_schools : async () => {
-        set(() => ({ loading_schools: true }));
-        
-    }
-}))
-
-export const useLibraries = create<Library>((set) => ({
+export const useLibraries = create<LibraryData & LibraryFunctions>((set) => ({
     selected_playlist : 1,
-    main_section: "home",
-    set_main_theme : async (  ) => {
-        set(() => ({ main_section: "chujec"}));
+    menu: "Dom",
+    set_playlist: async ( index ) => {
+        set(() => ({selected_playlist : index}))
+    },
+    set_menu : async ( menu ) => {
+        set(() => ({ menu : menu}));
         
     }
 }))

@@ -5,12 +5,22 @@ import { FaArrowRight } from "react-icons/fa6";
 import { TiPin } from "react-icons/ti";
 import { HiSpeakerWave } from "react-icons/hi2";
 import data from '../data/music_data/playlists.json'
+import { useLibraries } from '../data/stores/store';
 
 export default function Library() {
+
+  const set_menu = useLibraries((state) => state.set_menu)
+  const set_playlist = useLibraries((state) => state.set_playlist)
+  const selected_playlist = useLibraries((state) => state.selected_playlist)
 
   useEffect(() => {
     console.log(data)
   }, [])
+
+  const changeMenu = ( menu: string, index: number ) => {
+    set_menu(menu)
+    set_playlist(index)
+  }
 
 
   return (
@@ -27,7 +37,7 @@ export default function Library() {
 
             {data.map((item, index) => {
                 return (
-                    <div key={item.playlist_name} onClick={() => {console.log(index)}} className='h-[64px] w-full flex items-center pl-2 gap-2 font-[500] hover:bg-hover_black hover:rounded-lg cursor-pointer'>
+                    <div key={item.playlist_name} onClick={() => {changeMenu(item.playlist_type, index)}} className={`h-[64px] w-full flex items-center pl-2 gap-2 font-[500] hover:bg-hover_black ${index === selected_playlist ? "bg-hover_black rounded-lg" : null} hover:rounded-lg cursor-pointer`}>
                         {item.image_url === "blank" ? <div className='w-[45px] h-[45px] flex items-center justify-center bg-[#474646] rounded-lg'><svg viewBox="0 0 24 24" className='w-[25px] h-[25px] fill-[white] text-[white]'><path d="M6 3h15v15.167a3.5 3.5 0 1 1-3.5-3.5H19V5H8v13.167a3.5 3.5 0 1 1-3.5-3.5H6V3zm0 13.667H4.5a1.5 1.5 0 1 0 1.5 1.5v-1.5zm13 0h-1.5a1.5 1.5 0 1 0 1.5 1.5v-1.5z"></path></svg></div> : <img src={item.image_url} className='w-[45px] h-[45px] rounded-lg'/>}
                         <div>
                             <p className={`text-${item.pinned ? 'green' : '[white]'} text-[15px] ml-1 font-[600]`}>{item.playlist_name}</p>

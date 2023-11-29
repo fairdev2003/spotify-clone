@@ -4,7 +4,30 @@
         "playlist_author": "Music Channel Lol",
         "playlist_type" : "Playlista",
         "image_url": "https://i.scdn.co/image/ab67706c0000da84211ac3697c7baa86a5ee35fc",
-        "pinned": true
+        "pinned": true,
+        "track_list": [
+            {
+                "music_name": "Away",
+                "music_authors": ["Throttle"],
+                "time": "0:36",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13",
+                "album": "Where u are"
+            },
+            {
+                "music_name": "ay! (feat: Lil Wayne)",
+                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84",
+                "album": "mainstream sellout"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            }
+        ]
 
     },
     {
@@ -12,34 +35,209 @@
         "playlist_author": "Music Channel Lol",
         "playlist_type" : "Playlista",
         "image_url": "https://i.scdn.co/image/ab67706c0000da849418e08d6b21a26a568d9afa",
-        "pinned": false
+        "pinned": false,
+        "track_list": [
+            {
+                "music_name": "Away",
+                "music_authors": ["Throttle"],
+                "time": "0:36",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13",
+                "album": "Where u are"
+            },
+            {
+                "music_name": "ay! (feat: Lil Wayne)",
+                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84",
+                "album": "mainstream sellout"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            }
+        ]
     },
     {
         "playlist_name": "Chillhop",
         "playlist_author": "Spotify",
         "playlist_type" : "Playlista",
         "image_url": "https://i.scdn.co/image/ab67706f00000002c6e23ff8bdf41be3c17bcc92",
-        "pinned": false
+        "pinned": false,
+        "track_list": [
+            {
+                "music_name": "Away",
+                "music_authors": ["Throttle"],
+                "time": "0:36",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13",
+                "album": "Where u are"
+            },
+            {
+                "music_name": "ay! (feat: Lil Wayne)",
+                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84",
+                "album": "mainstream sellout"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            }
+        ]
     },
     {
         "playlist_name": "Retro",
         "playlist_author": "Music Channel Lol",
         "playlist_type" : "Playlista",
         "image_url": "https://i.scdn.co/image/ab67706c0000da8492117a46b4832d1a8b527170",
-        "pinned": false
+        "pinned": false,
+        "track_list": [
+            {
+                "music_name": "Away",
+                "music_authors": ["Throttle"],
+                "time": "0:36",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13"
+            },
+            {
+                "music_name": "ay! (feat: Lil Wayne)",
+                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84"
+            }
+        ]
     },
     {
         "playlist_name": "Playlista bez nazwy",
         "playlist_author": "Zbigniew Kucharski",
         "playlist_type" : "Playlista",
         "image_url": "blank",
-        "pinned": false
+        "pinned": false,
+        "track_list": [
+            {
+                "music_name": "Away",
+                "music_authors": ["Throttle"],
+                "time": "0:36",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13",
+                "album": "Where u are"
+            },
+            {
+                "music_name": "ay! (feat: Lil Wayne)",
+                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84",
+                "album": "mainstream sellout"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            }
+        ]
     },
     {
         "playlist_name": "Hellrider",
         "playlist_author": "Data Drive",
         "playlist_type" : "Album",
         "image_url": "https://i.scdn.co/image/ab67616d00004851a5b3b6493e7be72c1919443f",
-        "pinned": false
+        "pinned": false,
+        "track_list": [
+            {
+                "music_name": "Away",
+                "music_authors": ["Throttle"],
+                "time": "0:36",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13",
+                "album": "Where u are"
+            },
+            {
+                "music_name": "ay! (feat: Lil Wayne)",
+                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
+                "time": "2:04",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84",
+                "album": "mainstream sellout"
+            },
+            {
+                "music_name": "Sunroof",
+                "music_authors": ["Nicky Youre", "dazzy"],
+                "time": "2:43",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
+                "album": "Sunroof"
+            }
+        ]
     }
 ]
