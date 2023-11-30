@@ -26,6 +26,41 @@
                 "time": "2:43",
                 "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
                 "album": "Sunroof"
+            },
+            {
+                "music_name": "THATS WHAT I WANT",
+                "music_authors": ["Lil Nas X"],
+                "time": "2:24",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851be82673b5f79d9658ec0a9fd",
+                "album": "MONTERO"
+            },
+            {
+                "music_name": "Bad Dream",
+                "music_authors": ["Steller"],
+                "time": "2:28",
+                "music_image": "https://i.scdn.co/image/ab67616d00004851b077d3a239142a43bfb25215",
+                "album": "Bad Dream"
+            },
+            {
+                "music_name": "Late NIght Talking",
+                "music_authors": ["Harry Styles"],
+                "time": "2:58",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512e8ed79e177ff6011076f5f0",
+                "album": "Harry's House"
+            },
+            {
+                "music_name": "As it was",
+                "music_authors": ["Harry Styles"],
+                "time": "2:47",
+                "music_image": "https://i.scdn.co/image/ab67616d000048512e8ed79e177ff6011076f5f0",
+                "album": "As it was"
+            },
+            {
+                "music_name": "Thousand Miles",
+                "music_authors": ["The Kid LAROI"],
+                "time": "2:45",
+                "music_image": "https://i.scdn.co/image/ab67616d0000485186322307ddfb6e9c87b82d39",
+                "album": "Thousand Miles"
             }
         ]
 
@@ -218,25 +253,11 @@
         "pinned": false,
         "track_list": [
             {
-                "music_name": "Away",
-                "music_authors": ["Throttle"],
+                "music_name": "Hellrider",
+                "music_authors": ["Data Drive"],
                 "time": "0:36",
-                "music_image": "https://i.scdn.co/image/ab67616d00004851916608c76c65821c3899ab13",
-                "album": "Where u are"
-            },
-            {
-                "music_name": "ay! (feat: Lil Wayne)",
-                "music_authors": ["Lil Wayne", "Machine Gun Kelly"],
-                "time": "2:04",
-                "music_image": "https://i.scdn.co/image/ab67616d00004851b4683d9ac3c5f14a71523c84",
-                "album": "mainstream sellout"
-            },
-            {
-                "music_name": "Sunroof",
-                "music_authors": ["Nicky Youre", "dazzy"],
-                "time": "2:43",
-                "music_image": "https://i.scdn.co/image/ab67616d000048512d03cfe61f9e398fa2f68c65",
-                "album": "Sunroof"
+                "music_image": "https://i.scdn.co/image/ab67616d00001e02a5b3b6493e7be72c1919443f",
+                "album": "Data Drive"
             }
         ]
     }

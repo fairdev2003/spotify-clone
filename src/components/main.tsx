@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { FaHouse } from "react-icons/fa6";
 import { IoIosSearch } from "react-icons/io";
 import '../App.css';
@@ -10,6 +10,7 @@ import { useLibraries } from '../data/stores/store';
 // @ts-ignore
 import Playlist from './playlist';
 import Album from './album';
+import Search from './search';
 
 export default function Main() {
 
@@ -21,7 +22,9 @@ export default function Main() {
     } if (prop === "Dom") {
       return (<Home/>)
     } if (prop === "Album") {
-      return (<Album/>)
+      return (<Album/>) 
+    } if (prop === "Szukaj") {
+      return (<Search/>)
     }
   }
 
@@ -31,15 +34,20 @@ export default function Main() {
     set_menu(menu)
   }
 
-
   return (
     <div>
       <div id="whole-app">
         <div className='' id='left'>
           <div className='grid font-[Poppins] font-[500] m-2 bg-[#181717] w-[400px] h-[auto] rounded-xl'>
             <ul>
-              <li onClick={() => {changeMenu('Dom')}} className='cursor-pointer m-4 flex text-center items-center gap-5 text-xl text-[white]'><FaHouse/>Dom</li>
-              <li className='cursor-pointer m-4 flex text-center items-center gap-5 text-xl text-[white]'><IoIosSearch />Szukaj</li>
+              <li onClick={() => {
+                changeMenu('Dom');
+                
+              }} className='cursor-pointer m-4 flex text-center items-center gap-5 text-lg font-[500] text-[white]'><FaHouse/>Dom</li>
+              <li onClick={() => {
+                changeMenu('Szukaj');
+
+                }} className='cursor-pointer m-4 flex text-center items-center gap-5 text-lg font-[500] text-[white]'><IoIosSearch />Szukaj</li>
             </ul>
           </div>
           <div className='grid font-[Poppins] m-2 bg-[#181717] w-[400px] h-[700px] rounded-xl'>

@@ -1,0 +1,8 @@
+#music-record:hover {
+    #index {
+        display: none;
+    }
+    #play {
+        display: flex;
+    }
+}
