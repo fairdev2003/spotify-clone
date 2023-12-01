@@ -64,7 +64,7 @@ const Album = () => {
                     </div>
                   </div>
                   <div className='w-[290px] text-[13px] text-[gray]'>
-                      {item.album}
+                      chuj
                   </div>
                   <div className='w-[300px] text-[13px] text-[gray]'>
                       {item.time}
@@ -76,10 +76,10 @@ const Album = () => {
             <div className='m-6'>
               <h1 className='text-xl text-[white] font-[700] mb-4'>Więcej utworów od {data[playlist].playlist_author}</h1>
               <div className='flex gap-2'>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
+                <Card playlist_name={data[playlist].playlist_name} desc={"2023"} img={data[playlist].image_url}/>
+                <Card playlist_name={data[playlist].playlist_name} desc={"2023"} img={data[playlist].image_url}/>
+                <Card playlist_name={data[playlist].playlist_name} desc={"2023"} img={data[playlist].image_url}/>
+                <Card playlist_name={data[playlist].playlist_name} desc={"2023"} img={data[playlist].image_url}/>
               </div>
                 
               

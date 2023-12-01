@@ -1,0 +1,75 @@
+{"last":[{
+        "playlist_name": "All The Music",
+        "playlist_author": "Music Channel Lol",
+        "playlist_type" : "Playlista",
+        "image_url": "https://i.scdn.co/image/ab67706c0000da84211ac3697c7baa86a5ee35fc"
+    },
+    {
+        "playlist_name": "Muzyka",
+        "playlist_author": "Music Channel Lol",
+        "playlist_type" : "Playlista",
+        "image_url": "https://i.scdn.co/image/ab67706c0000da849418e08d6b21a26a568d9afa"
+    },
+    {
+        "playlist_name": "Chillhop",
+        "playlist_author": "Spotify",
+        "playlist_type" : "Playlista",
+        "image_url": "https://i.scdn.co/image/ab67706f00000002c6e23ff8bdf41be3c17bcc92"
+    },
+    {
+        "playlist_name": "Retro",
+        "playlist_author": "Music Channel Lol",
+        "playlist_type" : "Playlista",
+        "image_url": "https://i.scdn.co/image/ab67706c0000da8492117a46b4832d1a8b527170"
+    },
+    {
+        "playlist_name": "Playlista bez nazwy",
+        "playlist_author": "Music Channel Lol",
+        "playlist_type" : "Playlista",
+        "image_url": "blank"
+    },
+    {
+        "playlist_name": "Hellrider",
+        "playlist_author": "Data Drive",
+        "playlist_type" : "Playlista",
+        "image_url": "https://i.scdn.co/image/ab67616d00004851a5b3b6493e7be72c1919443f"
+    }],
+    "popular": [
+        {
+            "playlist_name": "Chill Mix",
+            "playlist_author": "Data Drive",
+            "playlist_type" : "Playlista",
+            "image_url": "https://seed-mix-image.spotifycdn.com/v6/img/chill/4tjqHer0BFQbJ1FVyWhffM/pl/default"
+        },
+        {
+            "playlist_name": "Moody Mix",
+            "playlist_author": "Data Drive",
+            "playlist_type" : "Playlista",
+            "image_url": "https://seed-mix-image.spotifycdn.com/v6/img/moody/0dgJbQ0bKPyUXco8hEXN7X/pl/default"
+        },
+        {
+            "playlist_name": "Eletroniczna",
+            "playlist_author": "Data Drive",
+            "playlist_type" : "Playlista",
+            "image_url": "https://seed-mix-image.spotifycdn.com/v6/img/dance_electronic/0NGAZxHanS9e0iNHpR8f2W/pl/default"
+        },
+        {
+            "playlist_name": "Moody Mix",
+            "playlist_author": "Data Drive",
+            "playlist_type" : "Playlista",
+            "image_url": "https://seed-mix-image.spotifycdn.com/v6/img/moody/0dgJbQ0bKPyUXco8hEXN7X/pl/default"
+        },
+        {
+            "playlist_name": "Moody Mix",
+            "playlist_author": "Data Drive",
+            "playlist_type" : "Playlista",
+            "image_url": "https://seed-mix-image.spotifycdn.com/v6/img/moody/0dgJbQ0bKPyUXco8hEXN7X/pl/default"
+        },
+        {
+            "playlist_name": "Moody Mix",
+            "playlist_author": "Data Drive",
+            "playlist_type" : "Playlista",
+            "image_url": "https://seed-mix-image.spotifycdn.com/v6/img/moody/0dgJbQ0bKPyUXco8hEXN7X/pl/default"
+        }
+    ]
+}

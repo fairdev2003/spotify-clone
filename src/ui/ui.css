@@ -17,3 +17,20 @@
       
     100% { transform: translateY(0px); opacity: 1; }
   }
+
+@keyframes in_long {
+    0%   { opacity: 0; }
+      
+    100% { opacity: 1; }
+    
+}
+
+#longer_button_container:hover {
+    #playbutton_long {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1;
+        animation: in_long 0.5s;
+    }
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from './navbar'
 import { useLibraries } from '../data/stores/store'
 import data from '../data/music_data/playlists.json'
+import popular from '../data/music_data/popular.json'
 import { FaPlay } from "react-icons/fa";
 import { motion } from 'framer-motion'
 import { FaShuffle } from "react-icons/fa6";
@@ -11,6 +12,7 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import Card from '../ui/card';
 import { BiPlay } from 'react-icons/bi';
 import './playlist.css'
+import LongerCard from '../ui/longer_card';
 
 const Playlist = () => {
 
@@ -64,7 +66,7 @@ const Playlist = () => {
                     </div>
                   </div>
                   <div className='w-[290px] text-[13px] text-[gray] select-none'>
-                      {item.album}
+                      chuj
                   </div>
                   <div className='w-[300px] text-[13px] text-[gray] select-none'>
                       {item.time}
@@ -75,11 +77,7 @@ const Playlist = () => {
             })}
             <div className='m-6'>
               <h1 className='text-xl text-[white] font-[700] mb-4'>Więcej utworów od {data[playlist].playlist_author}</h1>
-              <div className='flex gap-2'>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
-                <Card playlist_name={data[playlist].playlist_name} year={2023} img={data[playlist].image_url}/>
+              <div className='flex gap-4'>
               </div>
                 
               

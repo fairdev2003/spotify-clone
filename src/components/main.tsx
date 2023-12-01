@@ -58,7 +58,7 @@ export default function Main() {
         <div className='font-[Poppins] m-2 bg-[#181717] rounded-xl max-height:[100vh]; overflow-y: scroll' id='right'>
           {ChoosenMenu(menu)}
         </div>
-        <div className='w-[auto] h-[120px] bg-[black] m-2 mt-0 mb-0 rounded-xl' id='player'>Siema</div>
+        <div className='w-[auto] h-[135px] bg-[black] m-2 mt-0 mb-0 rounded-xl' id='player'>Siema</div>
       </div>
       
     </div>
