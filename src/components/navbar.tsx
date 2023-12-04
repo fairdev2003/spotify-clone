@@ -13,10 +13,6 @@ const Navbar = (props: {color: string, search: boolean}) => {
   const inputRef: any = useRef();
   const set_playlist = useLibraries((state) => state.set_playlist)
 
-  const FocusButton = (ref: any) => {
-    ref.current.focus();
-  }
-
   useEffect(() => {
     if (props.search) {
       inputRef.current.focus();

@@ -1,23 +1,20 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Navbar from './navbar'
 import { useLibraries } from '../data/stores/store'
 import data from '../data/music_data/playlists.json'
-import popular from '../data/music_data/popular.json'
 import { FaPlay } from "react-icons/fa";
 import { motion } from 'framer-motion'
 import { FaShuffle } from "react-icons/fa6";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import Card from '../ui/card';
 import { BiPlay } from 'react-icons/bi';
 import './playlist.css'
-import LongerCard from '../ui/longer_card';
 
 const Playlist = () => {
 
   const playlist = useLibraries((state) => state.selected_playlist)
-  const [isLoading, setisLoading] = useState(false)
+  const [isLoading] = useState(false)
 
   return (
     <div>
@@ -53,7 +50,7 @@ const Playlist = () => {
                     <BiPlay size={30} className='w-[20px] m-1 hidden select-none' id='play'/>
                   </div>
                   <div className='w-[390px] flex text-[white] gap-2 select-none'>
-                    <img className='w-[40px] h-[40px] font-[800]' src={item.music_image}></img>
+                    <img alt='image' className='w-[40px] h-[40px] font-[800]' src={item.music_image}></img>
                     <div className=''>
                       <p className='text-[14px] select-none'>{item.music_name}</p>
                       <p><div className='flex text-[14px] select-none'>{item.music_authors.map(
