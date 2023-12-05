@@ -7,7 +7,8 @@ module.exports = {
       'background_black': '#181717',
       'hover_black': '#111111',
       'gray': '#838080',
-      'green': '#1ed760'
+      'green': '#1ed760',
+      'white': '#FFFFFF'
     },
   },
   plugins: [],

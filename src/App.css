@@ -54,12 +54,13 @@
 
 #left {
   grid-area: search;
-  height: auto;
+  height: 870px;
   width: 400px;
 }
 
 #right {
   grid-area: music;
+  height: auto;
 }
 
 #player {

@@ -14,11 +14,17 @@ import Search from './search';
 import sound from '../data/temp_music/sus.mp3'
 import axios from 'axios';
 import { motion } from 'framer-motion';
+import Player from './player';
+import data from '../data/music_data/data.json'
 
 export default function Main() {
 
-  const [audio] = useState(new Audio('http://localhost:3001/file/fainted.mp3'));
+  const inputRef: any = useRef()
+
+  const [audio] = useState(new Audio('http://localhost:3001/file/scarlet.mp3'));
   const [playing, setPlaying] = useState(false);
+  const [currentTime, setcurrentTime]: any = useState(0);
+
 
   const menu = useLibraries((state) => state.menu)
 
@@ -46,14 +52,12 @@ export default function Main() {
 
   useEffect(() => {
     playing ? audio.play() : audio.pause()
+    audio.volume = 0.5
   }, [playing])
 
   useEffect(() => {
     console.log("Music Ended")
-  }, [audio.ended])
-
-
-  
+  }, [audio.currentTime])
 
 
   return (
@@ -72,23 +76,22 @@ export default function Main() {
                 }} className='cursor-pointer m-4 flex text-center items-center gap-5 text-lg font-[500] text-[white]'><IoIosSearch />Szukaj</li>
             </ul>
           </div>
-          <div className='grid font-[Poppins] m-2 bg-[#181717] w-[400px] h-[700px] rounded-xl'>
+          <div className='grid font-[Poppins] m-2 bg-[#181717] w-[400px] h-[742px] rounded-xl'>
             <Library/>
             {/* <audio className='ml-5' controls>
               <source src='http://localhost:3001/file/fainted.mp3'  type="audio/ogg"/>
             </audio> */}
-            <div className='flex justify-center'>
-              <motion.div onClick={() => {setPlaying(!playing)}} whileHover={{scale: 1.05}} className='bg-green w-[70px] h-[70px] rounded-full flex justify-center items-center cursor-pointer' >{playing ? <FaPause size={30}/> : <FaPlay size={30} className='ml-1'/>}</motion.div>
-            </div>
           </div>
           
         </div>
         <div className='font-[Poppins] m-2 bg-[#181717] rounded-xl max-height:[100vh]; overflow-y: scroll' id='right'>
           {ChoosenMenu(menu)}
         </div>
-        <div className='bg-[black] h-[242px]'>
-
-        </div>
+        
+        
+      </div>
+      <div className='w-[100%] bg-[black]'>
+          <Player music_link='http://localhost:3001/file/scarlet.mp3' music_data={data}/>
       </div>
       
     </div>
