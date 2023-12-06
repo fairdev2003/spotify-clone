@@ -1,37 +1,78 @@
 [
     {
-        "music_name": "Scarlet Speedster (feat: Rhea Raj)",
-        "music_authors" : ["Wayfloe", "Rhea Raj"], 
-        "music_image": "https://i.scdn.co/image/ab67616d00004851703c2b500e0f2cef6743e59d",
-        "music_url": "http://localhost:3001/file/scarlet.mp3",
-        "album": "Neon West"
+        "_id": "6570a76e5455ddaf06cf2edf",
+        "song_name": "Scarlet Speedster (feat: Rhea Raj)",
+        "song_author": "Wayfloe",
+        "song_link": "http://localhost:3001/file/scarlet.mp3",
+        "image_link": "https://i.scdn.co/image/ab67616d00004851703c2b500e0f2cef6743e59d",
+        "contributors": [
+            "Rhea Raj"
+        ],
+        "album": "Neon West",
+        "__v": 0,
+        "createdAt": "2023-12-06T16:55:10.778Z",
+        "updatedAt": "2023-12-06T16:55:10.778Z"
     },
     {
-        "music_name": "Optimal Sus",
-        "music_authors" : ["StreamBeats by Harris Heller"], 
-        "music_image": "https://i.scdn.co/image/ab67616d0000485142165789790edd8bc51e9c43",
-        "music_url": "http://localhost:3001/file/sus.mp3",
-        "album": "Breaker"
+        "_id": "6570a8715455ddaf06cf2ee2",
+        "song_name": "Optimal Sus",
+        "song_author": "StreamBeats by Harris Heller",
+        "song_link": "http://localhost:3001/file/sus.mp3",
+        "image_link": "https://i.scdn.co/image/ab67616d0000485142165789790edd8bc51e9c43",
+        "contributors": [],
+        "album": "Breaker",
+        "__v": 0,
+        "createdAt": "2023-12-06T16:59:29.953Z",
+        "updatedAt": "2023-12-06T16:59:29.953Z"
     },
     {
-        "music_name": "IT HURTS!",
-        "music_authors" : ["San Holo"], 
-        "music_image": "https://i.scdn.co/image/ab67616d0000b2738c2877b422fdee55ad880ead",
-        "music_url": "http://localhost:3001/file/ithurts.mp3",
-        "album": "bb u ok?"
+        "_id": "6570a8e25455ddaf06cf2ee5",
+        "song_name": "Fainted",
+        "song_author": "Nervent",
+        "song_link": "http://localhost:3001/file/fainted.mp3",
+        "image_link": "https://i.scdn.co/image/ab67616d0000b2734812bcd7da9edf3ecc02d558",
+        "contributors": [],
+        "album": "Fainted",
+        "__v": 0,
+        "createdAt": "2023-12-06T17:01:22.631Z",
+        "updatedAt": "2023-12-06T17:01:22.631Z"
     },
     {
-        "music_name": "Fainted",
-        "music_authors" : ["Nervent"], 
-        "music_image": "https://i.scdn.co/image/ab67616d0000b2734812bcd7da9edf3ecc02d558",
-        "music_url": "http://localhost:3001/file/fainted.mp3",
-        "album": "Fainted"
+        "_id": "6570a9365455ddaf06cf2ee8",
+        "song_name": "ay! (feat: Lil Wayne)",
+        "song_author": "Machine Gun Kelly",
+        "song_link": "http://localhost:3001/file/ay!.mp3",
+        "image_link": "https://i.scdn.co/image/ab67616d0000b273b4683d9ac3c5f14a71523c84",
+        "contributors": [
+            "Lil Wayne"
+        ],
+        "album": "mainstream sellout",
+        "__v": 0,
+        "createdAt": "2023-12-06T17:02:46.518Z",
+        "updatedAt": "2023-12-06T17:02:46.518Z"
     },
     {
-        "music_name": "ay! (feat: Lil Wayne)",
-        "music_authors" : ["Machine Gun Kelly", "Lil Wayne"], 
-        "music_image": "https://i.scdn.co/image/ab67616d0000b273b4683d9ac3c5f14a71523c84",
-        "music_url": "http://localhost:3001/file/ay!.mp3",
-        "album": "mainstream sellout"
+        "_id": "6570a9775455ddaf06cf2eea",
+        "song_name": "IT HURTS!",
+        "song_author": "San Holo",
+        "song_link": "http://localhost:3001/file/ithurts.mp3",
+        "image_link": "https://i.scdn.co/image/ab67616d0000b2738c2877b422fdee55ad880ead",
+        "contributors": [],
+        "album": "bb u ok?",
+        "__v": 0,
+        "createdAt": "2023-12-06T17:03:51.580Z",
+        "updatedAt": "2023-12-06T17:03:51.580Z"
+    },
+    {
+        "_id": "6570affdc8e5a78131aabb55",
+        "song_name": "Destroy Me",
+        "song_author": "Mr.Kitty",
+        "song_link": "http://localhost:3001/file/destroyme.mp3",
+        "image_link": "https://i.scdn.co/image/ab67616d0000b27320fa2969bcb31b4777286e35",
+        "contributors": [],
+        "album": "Eternity",
+        "__v": 0,
+        "createdAt": "2023-12-06T17:31:41.310Z",
+        "updatedAt": "2023-12-06T17:31:41.310Z"
     }
 ]

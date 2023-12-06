@@ -15,7 +15,6 @@ import sound from '../data/temp_music/sus.mp3'
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import Player from './player';
-import data from '../data/music_data/data.json'
 
 export default function Main() {
 
@@ -24,6 +23,7 @@ export default function Main() {
   const [audio] = useState(new Audio('http://localhost:3001/file/scarlet.mp3'));
   const [playing, setPlaying] = useState(false);
   const [currentTime, setcurrentTime]: any = useState(0);
+  const [data, setdata] = useState([])
 
 
   const menu = useLibraries((state) => state.menu)
@@ -50,14 +50,24 @@ export default function Main() {
     audio.pause()
   }
 
-  useEffect(() => {
-    playing ? audio.play() : audio.pause()
-    audio.volume = 0.5
-  }, [playing])
+  const FetchData = async () => {
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+      }
+    }
+
+    const response = await axios.get('http://localhost:3001/api/music_data', config)
+
+    setdata(response.data)
+    console.log(response.data)
+  }
+
 
   useEffect(() => {
-    console.log("Music Ended")
-  }, [audio.currentTime])
+    FetchData()
+  }, [])
 
 
   return (
@@ -91,7 +101,7 @@ export default function Main() {
         
       </div>
       <div className='w-[100%] bg-[black]'>
-          <Player music_link='http://localhost:3001/file/scarlet.mp3' music_data={data}/>
+          {data && data.length > 0 ? <Player music_link='http://localhost:3001/file/scarlet.mp3' music_data={data}/> : null}
       </div>
       
     </div>

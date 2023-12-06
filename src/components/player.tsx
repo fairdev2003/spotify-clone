@@ -22,10 +22,6 @@ const Player = (props: {music_link: string, music_data: any}) => {
 
     const [track, setTrack] = useState(0)
 
-    // useEffect(() => {
-    //     playing ? musicRef.current.play() : musicRef.current.pause()
-    // }, [playing])  
-
     useEffect(() => {
         console.log(musicRef.current.volume)
     }, [playing])
@@ -88,6 +84,7 @@ const Player = (props: {music_link: string, music_data: any}) => {
             musicRef.current.play();
             musicRef.current.volume = 0.2
             setplaying(true)
+            setRepeatType(2)
             CalculateDuration(musicRef.current.duration);
         }, { once: true });
         console.log(musicRef.current.volume)
@@ -106,6 +103,7 @@ const Player = (props: {music_link: string, music_data: any}) => {
             musicRef.current.play();
             musicRef.current.volume = 0.2
             setplaying(true)
+            setRepeatType(2)
             CalculateDuration(musicRef.current.duration);
     }, { once: true });
     console.log(musicRef.current.volume)
@@ -153,12 +151,14 @@ const Player = (props: {music_link: string, music_data: any}) => {
 
   return (
     <div className='flex justify-between items-center pb-[23px]'>
-        <audio src={props.music_data[track].music_url} ref={musicRef} onEnded={PlayNext} onTimeUpdate={() => {onPlaying(musicRef)}}></audio>
+        <audio src={props.music_data[track].song_link} ref={musicRef} onEnded={PlayNext} onTimeUpdate={() => {onPlaying(musicRef)}}></audio>
         <div className='flex items-center ml-5 w-[360px]'>
-            <img className='w-[60px] h-[60px] flex items-center' src={props.music_data[track].music_image}></img>
+            <img className='w-[60px] h-[60px] flex items-center' src={props.music_data[track].image_link}></img>
             <div className='flex flex-col'>
-                <p className='font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2'>{props.music_data[track].music_name}</p>
-                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{props.music_data[track].music_authors[0]}</p>
+                <p className='font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2'>{props.music_data[track].song_name}</p>
+                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${props.music_data[track].song_author[0][0].nickname}${props.music_data[track].contributors[0].map((item) => {
+                    return (", " + item.nickname)
+                })}`}</p>
             </div>
         </div>
 
