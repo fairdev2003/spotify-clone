@@ -10,21 +10,34 @@ const PlaylistData = new Schema({
     playlist_desc: {
         type: String
     },
-    playlist_author: {
-        type: Object,
+    playlist_image_link : {
+        type: String,
+    },
+    playlist_author_id: {
+        type: mongoose.Schema.ObjectId,
         required: true
+    },
+    playlist_author: {
+        type: Array,
+        required: true
+    },
+    playlist_view_ids: {
+        type: [mongoose.Schema.ObjectId],
     },
     playlist_view: {
         type: Array,
-        required: true
+    },
+    contributors_ids: {
+        type: [mongoose.Schema.ObjectId],
     },
     contributors: {
         type: Array,
-        required: true
+    },
+    playlist_songs_ids: {
+        type: [mongoose.Schema.ObjectId],
     },
     playlist_songs: {
         type: Array,
-        required: true
     },
     playlist_type: {
         type: String,

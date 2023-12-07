@@ -9,7 +9,14 @@ const musicSchema = new Schema({
     },
     song_author: {
         type: Array,
+    },
+    author_id: {
+        type: mongoose.Schema.ObjectId,
         required: true
+    },
+    contributors_ids: {
+        type: [mongoose.Schema.ObjectId],
+        required: Array
     },
     song_link: {
         type: String,

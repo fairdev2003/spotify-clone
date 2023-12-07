@@ -156,9 +156,9 @@ const Player = (props: {music_link: string, music_data: any}) => {
             <img className='w-[60px] h-[60px] flex items-center' src={props.music_data[track].image_link}></img>
             <div className='flex flex-col'>
                 <p className='font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2'>{props.music_data[track].song_name}</p>
-                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${props.music_data[track].song_author[0][0].nickname}${props.music_data[track].contributors[0].map((item) => {
+                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${props.music_data ? props.music_data[track].song_author[0].nickname: null}${props.music_data[track].contributors ? props.music_data[track].contributors.map((item) => {
                     return (", " + item.nickname)
-                })}`}</p>
+                }): null}`}</p>
             </div>
         </div>
 
