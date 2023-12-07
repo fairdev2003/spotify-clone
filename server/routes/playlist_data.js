@@ -82,6 +82,21 @@ router.post("/get_user_playlists", async (req, res) => {
                         from: "musicdatas",
                         localField: "playlist_songs_ids",
                         foreignField: "_id",
+                        pipeline: [{   
+                            $lookup: {
+                                from: "usersdatas",
+                                localField: "contributors_ids",
+                                foreignField: "_id",
+                                as: "contributors"
+                            },
+                        },{
+                            $lookup: {
+                                from: "usersdatas",
+                                localField: "author_id",
+                                foreignField: "_id",
+                                as: "song_author"
+                            }
+                        }],
                         as: "playlist_songs"
                     },
                 },
