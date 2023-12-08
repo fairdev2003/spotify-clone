@@ -41,6 +41,10 @@ export default function Main() {
   }
 
   const set_menu = useLibraries((state) => state.set_menu)
+  const set_all_playlists = useLibraries((state) => state.set_all_playlists)
+  const all_playlists = useLibraries((state) => state.all_playlists)
+  const current_playlist = useLibraries((state) => state.current_playlist)
+  const playlist = useLibraries((state) => state.selected_playlist)
 
   const changeMenu = ( menu: string ) => {
     set_menu(menu)
@@ -51,17 +55,11 @@ export default function Main() {
   }
 
   const FetchData = async () => {
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-      }
-    }
 
-    const response = await axios.get('http://localhost:3001/api/music_data', config)
+    const response = await axios.get('http://localhost:3001/api/music_data')
 
+    console.log(all_playlists)
     setdata(response.data)
-    console.log(response.data)
   }
 
 
@@ -101,7 +99,7 @@ export default function Main() {
         
       </div>
       <div className='w-[100%] bg-[black]'>
-          {data && data.length > 0 ? <Player music_link='http://localhost:3001/file/scarlet.mp3' music_data={data}/> : null}
+          {data && data.length > 0 ? <Player/> : null}
       </div>
       
     </div>

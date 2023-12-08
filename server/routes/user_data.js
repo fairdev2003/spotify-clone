@@ -1,24 +1,11 @@
 const express = require('express')
-const PlaylistData = require('../models/UserModel')
+const UserData = require('../models/UserModel')
 
 const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
-        const music = await PlaylistData.find()
-        res.status(200).json(music)
-    } catch (error) {
-        res.status(400).json({error: error.message})
-    }
-})
-router.post('/getone', async (req, res) => {
-    const user_id = req.body[0].id
-
-
-    try {
-        const music = await PlaylistData.find({
-            "_id": user_id
-        })
+        const music = await UserData.find()
         res.status(200).json(music)
     } catch (error) {
         res.status(400).json({error: error.message})
@@ -29,7 +16,7 @@ router.post('/', async  (req, res) => {
     const { nickname, profile_image, verified } = req.body
 
     try {
-        const music = await PlaylistData.insertMany({
+        const music = await UserData.insertMany({
             nickname: nickname,
             profile_image: profile_image,
             verified: verified

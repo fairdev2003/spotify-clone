@@ -70,13 +70,14 @@ router.post('/', async  (req, res) => {
 router.post("/get_user_playlists", async (req, res) => {
 
     try {
-        const response = await PlaylistData.aggregate(
+        const response = await PlaylistData.aggregate( 
             [
-                {
-                    $match: {
-                      "playlist_author_id": new mongoose.Types.ObjectId(req.body[0].user_id)
-                    }
-                  },
+                    {
+                        $match: { $or: [
+                            {"playlist_author_id": new mongoose.Types.ObjectId(req.body[0].user_id)},
+                            {"playlist_view_ids": new mongoose.Types.ObjectId(req.body[0].user_id)},
+                            {"contributors": new mongoose.Types.ObjectId(req.body[0].user_id)}
+                        ]}},
                   {   
                     $lookup: {
                         from: "musicdatas",

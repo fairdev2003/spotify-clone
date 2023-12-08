@@ -8,9 +8,10 @@ import Card from '../ui/card';
 export default function Home() {
 
   const set_playlist = useLibraries((state) => state.set_playlist)
+  const all_playlists = useLibraries((state) => state.all_playlists)
 
   useEffect(() => {
-    set_playlist(-1)
+    console.log(all_playlists)
   })
 
   return (
@@ -18,9 +19,9 @@ export default function Home() {
       <Navbar color='none' search={false}/>
         <h1 className='font-[Poppins] font-[700] text-2xl text-[white] p-4 pt-0'>Dzień Dobry!</h1>
         <div className='px-4 grid grid-cols-3 gap-3'>
-          {popular.last.map((item) => {
+          {all_playlists.map((item) => {
             return (
-              <LongerCard image={item.image_url} title={item.playlist_name}/>
+              <LongerCard image={item.playlist_image_link} title={item.playlist_name} data={item}/>
             )
           })}
         </div>

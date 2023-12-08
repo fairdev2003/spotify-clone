@@ -1,6 +1,5 @@
 const express = require('express')
 const MusicData = require('../models/MusicModel')
-const UserData = require('../models/UserModel')
 
 const router = express.Router()
 

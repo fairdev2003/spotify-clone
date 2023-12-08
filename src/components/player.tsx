@@ -9,8 +9,10 @@ import { RiRepeat2Line } from "react-icons/ri";
 import { AiOutlinePlaySquare } from "react-icons/ai";
 import { ImVolumeMute } from "react-icons/im";
 import { RiRepeatOneFill } from "react-icons/ri";
+import { useLibraries } from '../data/stores/store';
 
-const Player = (props: {music_link: string, music_data: any}) => {
+
+const Player = () => {
     const musicRef: any = useRef()
     const inputRef: any = useRef()
     const volumeRef: any = useRef()
@@ -19,12 +21,37 @@ const Player = (props: {music_link: string, music_data: any}) => {
     const [duration, setDuration] = useState('0:00')
     const [playing, setplaying] = useState(false)
     const [repeattype, setRepeatType] = useState(1)
+    const [music_data, set_music_data]: any = useState([])
 
-    const [track, setTrack] = useState(0)
+    const music = useLibraries((state) => state.current_playlist)
+    const setTrack = useLibraries((state) => state.set_track)
+    const track = useLibraries((state) => state.track)
+    const event_handler = useLibraries((state) => state.playing)
 
     useEffect(() => {
-        console.log(musicRef.current.volume)
-    }, [playing])
+
+        if (musicRef.current) {
+            musicRef.current.play()
+        }
+        
+    }, [track])
+    useEffect(() => {
+        if (musicRef.current) {
+            musicRef.current.play()
+        }
+    }, [music])
+
+    useEffect(() => {
+        if (event_handler == true) {
+            if (musicRef.current) {
+                musicRef.current.play()
+            }
+        } else {
+            if (musicRef.current) {
+                musicRef.current.pause()
+            }
+        }
+    }, [event_handler])
 
     const onPlaying = ( ref: any ) => {
         const d = ref.current.duration
@@ -74,7 +101,7 @@ const Player = (props: {music_link: string, music_data: any}) => {
 
     const prevSong = () => {
         if (track - 1 === -1) {
-            setTrack(props.music_data.length - 1)
+            setTrack(music.playlist_songs.length - 1)
         } else {
             setTrack(track - 1);
         }
@@ -92,7 +119,7 @@ const Player = (props: {music_link: string, music_data: any}) => {
     };
 
     const nextSong = () => {
-        if (track + 1 === props.music_data.length) {
+        if (track + 1 === music.playlist_songs.length) {
             setTrack(0)
         } else {
             setTrack(track + 1);
@@ -114,7 +141,7 @@ const Player = (props: {music_link: string, music_data: any}) => {
             musicRef.current.currentTime = 0;
             musicRef.current.play();
         } else {
-            if (track + 1 === props.music_data.length) {
+            if (track + 1 === music.playlist_songs.length) {
                 setTrack(0)
             } else {
                 setTrack(track + 1);
@@ -150,13 +177,14 @@ const Player = (props: {music_link: string, music_data: any}) => {
     
 
   return (
-    <div className='flex justify-between items-center pb-[23px]'>
-        <audio src={props.music_data[track].song_link} ref={musicRef} onEnded={PlayNext} onTimeUpdate={() => {onPlaying(musicRef)}}></audio>
+    <div className=''>
+        {music.playlist_songs && music != undefined ? <div className='flex justify-between items-center pb-[23px]'>
+        <audio src={music.playlist_songs[track].song_link} ref={musicRef} onEnded={PlayNext} onTimeUpdate={() => {onPlaying(musicRef)}}></audio>
         <div className='flex items-center ml-5 w-[360px]'>
-            <img className='w-[60px] h-[60px] flex items-center' src={props.music_data[track].image_link}></img>
+            <img className='w-[60px] h-[60px] flex items-center' src={music.playlist_songs[track].image_link}></img>
             <div className='flex flex-col'>
-                <p className='font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2'>{props.music_data[track].song_name}</p>
-                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${props.music_data ? props.music_data[track].song_author[0].nickname: null}${props.music_data[track].contributors ? props.music_data[track].contributors.map((item) => {
+                <p className={`font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2`}>{music.playlist_songs[track].song_name}</p>
+                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${music_data ? music.playlist_songs[track].song_author[0].nickname: null}${music.playlist_songs[track].contributors ? music.playlist_songs[track].contributors.map((item) => {
                     return (", " + item.nickname)
                 }): null}`}</p>
             </div>
@@ -199,7 +227,7 @@ const Player = (props: {music_link: string, music_data: any}) => {
                     console.log(musicRef.current.volume)
                 }} type='range'></input>
             </div>
-        
+        </div> : null}
     </div>
   )
 }
