@@ -10,6 +10,7 @@ const LongerCard = (props: { image: string, title?: string, data: any }) => {
   const set_track = useLibraries((state) => state.set_track)
   const set_playlist = useLibraries((state) => state.set_playlist)
   const set_menu = useLibraries((state) => state.set_menu)
+  const set_music = useLibraries((state) => state.set_music)
 
   return (
     <div className='min-w-[350px] h-[80px] bg-[#3a3939] blur-10 rounded-lg flex gap-5 items-center cursor-pointer relative' id='longer_button_container' onClick={
@@ -17,6 +18,9 @@ const LongerCard = (props: { image: string, title?: string, data: any }) => {
         console.log(props.data)
         set_menu(props.data.playlist_type)
         set_playlist(props.data)
+        set_track(0)
+        set_current_playlist(props.data)
+        set_music(props.data.playlist_songs[0]._id)
         
       }
     }>

@@ -4,7 +4,7 @@ import { useLibraries } from '../data/stores/store'
 import data from '../data/music_data/playlists.json'
 import { FaPlay } from "react-icons/fa";
 import { motion } from 'framer-motion'
-import { FaShuffle } from "react-icons/fa6";
+import { FaPause, FaShuffle } from "react-icons/fa6";
 import { MdOutlineDownloadForOffline } from "react-icons/md";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { AiOutlineClockCircle } from "react-icons/ai";
@@ -20,11 +20,16 @@ const Playlist = () => {
   const set_current_playlist = useLibraries((state) => state.set_current_playlist)
   const set_track = useLibraries((state) => state.set_track)
   const track = useLibraries((state) => state.track)
-  const set_playing = useLibraries((state) => state.set_playing)
-  const playing = useLibraries((state) => state.playing)
+  const set_music = useLibraries((state) => state.set_music)
+  const music = useLibraries((state) => state.music)
+  const playlist_id = useLibraries((state) => state.playlist_id)
+  const set_playlist_id = useLibraries((state) => state.set_playlist_id)
+  
 
   useEffect(() => {
     console.log(playlist)
+    console.log("current_playlist")
+    console.log(current_playlist)
   })
 
   return (
@@ -44,7 +49,9 @@ const Playlist = () => {
             <motion.div whileHover={{scale: 1.05}} className='bg-green w-[70px] h-[70px] rounded-full flex justify-center items-center cursor-pointer' onClick={() => {
               set_track(0)
               set_current_playlist(playlist)
-              }} ><FaPlay size={30} className='ml-1'/></motion.div>
+              set_music(playlist.playlist_songs[0]._id)
+              set_playlist_id(current_playlist._id)
+              }} >{playlist._id === playlist_id ? <FaPlay size={30} className='ml-1'/> : <FaPause size={30}/>}</motion.div>
             <FaShuffle className='text-[gray] hover:text-[white] w-[35px] h-[35px] cursor-pointer hover:'/>
             <MdOutlineDownloadForOffline className='text-[gray] hover:text-[white] w-[40px] h-[40px] cursor-pointer'/>
             <MdPersonAddAlt1 className='text-[gray] hover:text-[white] w-[40px] h-[40px] cursor-pointer'/>
@@ -60,22 +67,18 @@ const Playlist = () => {
             {playlist.playlist_songs.map((item, index) => {
               return (<>
                 <div key={index} className='h-[60px] ml-3 mr-6 p-3 flex items-center gap-3 rounded-lg hover:bg-[#474646] hover:text-[white]' id='music-record'>
-                  <div className='flex items-center gap-4'>
-                    <div className='w-[20px] m-1 text-[white] select-none' id='index'>{index !== track ? <p>{index + 1}</p> : <div className='icon'>
-                            <span />
-                            <span />
-                            <span />
-                          </div>}</div>
-                    {index !== track ? <BiPlay size={30} className='w-[20px] m-1 hidden select-none' id='play' onClick={() => {
-                      set_track(index)
-                      set_current_playlist(playlist)
-                    }}/> : null}
-                  </div>
+                  {item._id === music ? <p><div className='icon'><span></span><span></span><span></span></div></p> : <BiPlay onClick={() => {
+                    set_track(index)
+                    set_current_playlist(playlist)
+                    set_music(playlist.playlist_songs[index]._id)
+                  }} className='text-white w-4 h-4'></BiPlay>}
                   <div className='w-[390px] flex text-[white] gap-2 select-none'>
                     <img alt='image' className='w-[40px] h-[40px] font-[800]' src={item.image_link}></img>
                     <div className=''>
-                      <p className={`text-[14px] ${index === track ? "text-green" : "text-white"} select-none`}>{item.song_name}</p>
-                      <p className='text-[14px] select-none'>{item.song_author[0].nickname}</p>
+                      <p className={`text-[14px] ${item._id === music ? "text-green" : "text-white"} select-none`}>{item.song_name}</p>
+                      <p className='text-[14px] select-none'>{`${item.song_author[0].nickname}${item.contributors && item.contributors.length > 0 ? item.contributors.map((i) => {
+                        return ((", " + i.nickname))
+                      }): ""}`}</p>
                     </div>
                   </div>
                   <div className='w-[290px] text-[13px] text-[gray] select-none'>

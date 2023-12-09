@@ -23,10 +23,11 @@ const Player = () => {
     const [repeattype, setRepeatType] = useState(1)
     const [music_data, set_music_data]: any = useState([])
 
-    const music = useLibraries((state) => state.current_playlist)
+    const current_playlist = useLibraries((state) => state.current_playlist)
     const setTrack = useLibraries((state) => state.set_track)
     const track = useLibraries((state) => state.track)
     const event_handler = useLibraries((state) => state.playing)
+    const set_music = useLibraries((state) => state.set_music)
 
     useEffect(() => {
 
@@ -39,16 +40,17 @@ const Player = () => {
         if (musicRef.current) {
             musicRef.current.play()
         }
-    }, [music])
+    }, [current_playlist])
 
     useEffect(() => {
         if (event_handler == true) {
             if (musicRef.current) {
                 musicRef.current.play()
-            }
+                set_music(current_playlist.playlist_songs[track]._id)            }
         } else {
             if (musicRef.current) {
                 musicRef.current.pause()
+                set_music(current_playlist.playlist_songs[track]._id)
             }
         }
     }, [event_handler])
@@ -92,6 +94,7 @@ const Player = () => {
     }
 
     const CalculateDuration = ( duration: number) => {
+
         if (Math.floor(duration % 60) < 10) {
             setDuration(`${Math.floor(duration / 60)}:0${Math.floor(duration % 60)}`)
         } else {
@@ -100,15 +103,27 @@ const Player = () => {
     }
 
     const prevSong = () => {
+        
         if (track - 1 === -1) {
-            setTrack(music.playlist_songs.length - 1)
+            setTrack(current_playlist.playlist_songs.length - 1)
         } else {
             setTrack(track - 1);
         }
         musicRef.current.load();
+
         musicRef.current.addEventListener('canplaythrough', () => {
             musicRef.current.currentTime = 0;
             musicRef.current.play();
+
+            if (track - 1 === -1) {
+                set_music(current_playlist.playlist_songs[current_playlist.playlist_songs.length - 1]._id)
+            } else {
+                set_music(current_playlist.playlist_songs[track - 1]._id)
+            }
+
+            
+
+            
             musicRef.current.volume = 0.2
             setplaying(true)
             setRepeatType(2)
@@ -119,7 +134,7 @@ const Player = () => {
     };
 
     const nextSong = () => {
-        if (track + 1 === music.playlist_songs.length) {
+        if (track + 1 === current_playlist.playlist_songs.length) {
             setTrack(0)
         } else {
             setTrack(track + 1);
@@ -128,6 +143,12 @@ const Player = () => {
         musicRef.current.addEventListener('canplaythrough', () => {
             musicRef.current.currentTime = 0;
             musicRef.current.play();
+
+            if (track + 1 === current_playlist.playlist_songs.length) {
+                set_music(current_playlist.playlist_songs[0]._id)
+            } else {
+                set_music(current_playlist.playlist_songs[track + 1]._id)
+            }
             musicRef.current.volume = 0.2
             setplaying(true)
             setRepeatType(2)
@@ -140,8 +161,9 @@ const Player = () => {
         if (repeattype === 3) {
             musicRef.current.currentTime = 0;
             musicRef.current.play();
+            set_music(current_playlist.playlist_songs[track]._id)
         } else {
-            if (track + 1 === music.playlist_songs.length) {
+            if (track + 1 === current_playlist.playlist_songs.length) {
                 setTrack(0)
             } else {
                 setTrack(track + 1);
@@ -150,6 +172,11 @@ const Player = () => {
             musicRef.current.addEventListener('canplaythrough', () => {
                 musicRef.current.currentTime = 0;
                 musicRef.current.play();
+                if (track + 1 === current_playlist.playlist_songs.length) {
+                    set_music(current_playlist.playlist_songs[0]._id)
+                } else {
+                    set_music(current_playlist.playlist_songs[track + 1]._id)
+                }
                 musicRef.current.volume = 0.2
                 setplaying(true)
                 CalculateDuration(musicRef.current.duration);
@@ -178,13 +205,13 @@ const Player = () => {
 
   return (
     <div className=''>
-        {music.playlist_songs && music != undefined ? <div className='flex justify-between items-center pb-[23px]'>
-        <audio src={music.playlist_songs[track].song_link} ref={musicRef} onEnded={PlayNext} onTimeUpdate={() => {onPlaying(musicRef)}}></audio>
+        {current_playlist.playlist_songs && current_playlist != undefined ? <div className='flex justify-between items-center pb-[23px]'>
+        <audio src={current_playlist.playlist_songs[track].song_link} ref={musicRef} onEnded={PlayNext} onTimeUpdate={() => {onPlaying(musicRef)}}></audio>
         <div className='flex items-center ml-5 w-[360px]'>
-            <img className='w-[60px] h-[60px] flex items-center' src={music.playlist_songs[track].image_link}></img>
+            <img className='w-[60px] h-[60px] flex items-center' src={current_playlist.playlist_songs[track].image_link}></img>
             <div className='flex flex-col'>
-                <p className={`font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2`}>{music.playlist_songs[track].song_name}</p>
-                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${music_data ? music.playlist_songs[track].song_author[0].nickname: null}${music.playlist_songs[track].contributors ? music.playlist_songs[track].contributors.map((item) => {
+                <p className={`font-[Poppins] text-[white] font-[600] text-[15px] w-[300px] truncate ml-2`}>{current_playlist.playlist_songs[track].song_name}</p>
+                <p className='font-[Poppins] text-[white] font-[400] text-[12px] w-[300px] ml-2'>{`${music_data ? current_playlist.playlist_songs[track].song_author[0].nickname: null}${current_playlist.playlist_songs[track].contributors ? current_playlist.playlist_songs[track].contributors.map((item) => {
                     return (", " + item.nickname)
                 }): null}`}</p>
             </div>

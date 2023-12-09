@@ -22,9 +22,17 @@ export default function Library() {
   const playlistDataFetch = async () => {
     const response = await axios.post("http://localhost:3001/api/playlist_data/get_user_playlists", [{user_id: "6571f16e6e6eec5aa562b31a"}])
 
-    set_all_playlists(response.data)
-    console.log(all_playlists)
-    setData(response.data)
+    let array = []
+
+    response.data.map((item) => {
+      item = {...item, playing: false }
+      array.push(item)
+      
+    })
+
+    console.log(array)
+    set_all_playlists(array)
+    setData(array)
 
   }
 
@@ -37,8 +45,8 @@ export default function Library() {
 
   const changeMenu = ( menu: string, index: number, playlist: any ) => {
     set_menu(menu)
-    set_playlist(playlist)
-    console.log(current_playlist)
+    set_playlist({...playlist, playing: false})
+    console.log(playlist)
   }
 
 

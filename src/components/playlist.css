@@ -5,6 +5,10 @@
     #play {
         display: flex;
     }
+
+    .icon {
+      display: hidden;
+    }
 }
 
 .icon {

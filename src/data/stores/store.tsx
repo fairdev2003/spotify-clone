@@ -14,6 +14,9 @@ type LibraryFunctions = {
     set_current_playlist: (array: Object[]) => void
     set_track: (track: number) => void
     set_playing: (event: boolean) => void
+    set_music: (event: string) => void
+    set_playlist_id: (id: string) => void
+    
 }
 
 type LibraryData = {
@@ -23,6 +26,9 @@ type LibraryData = {
     current_playlist : any
     track: number
     playing: boolean
+    music: string
+    playlist_id: string
+
 }
 
 // functions
@@ -33,7 +39,9 @@ export const useLibraries = create<LibraryData & LibraryFunctions>((set) => ({
     current_playlist : [],
     menu: "Dom",
     track: 0,
+    music: "",
     playing: false,
+    playlist_id: "",
     set_playlist: async ( index ) => {
         set(() => ({selected_playlist : index}))
     },
@@ -51,6 +59,12 @@ export const useLibraries = create<LibraryData & LibraryFunctions>((set) => ({
     },
     set_playing : async ( event ) => {
         set(() => ({ playing : event}));
+    },
+    set_music : async ( id ) => {
+        set(() => ({ music : id}));
+    },
+    set_playlist_id : async ( id ) => {
+        set(() => ({ playlist_id : id}));
     }
     
 }))
